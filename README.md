@@ -1,2 +1,2 @@
-# semanaTec_sep25
+# Bienvenido
 repositorio para la clase "El arte de la programacion" semestre AD-25
