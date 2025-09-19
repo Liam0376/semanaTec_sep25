@@ -8,8 +8,8 @@ Exercises
    Hint: colormode(255); color(0, 100, 200)
 """
 
-from random import *
-from turtle import *
+import random
+import turtle
 
 from freegames import vector
 
@@ -19,7 +19,7 @@ aim = vector(2, 0)
 
 def wrap(value):
     """Wrap value around -200 and 200."""
-    return value  # TODO
+    return ((value + 200) % 400) - 200
 
 
 def draw():
@@ -28,19 +28,18 @@ def draw():
     ant.x = wrap(ant.x)
     ant.y = wrap(ant.y)
 
-    aim.move(random() - 0.5)
-    aim.rotate(random() * 10 - 5)
+    turtle.clear()
+    turtle.goto(ant.x, ant.y)
+    turtle.dot(10, 'black')
 
-    clear()
-    goto(ant.x, ant.y)
-    dot(4)
-
-    ontimer(draw, 100)
+    turtle.update()
+    turtle.ontimer(draw, 100)
 
 
-setup(420, 420, 370, 0)
-hideturtle()
-tracer(False)
-up()
+
+turtle.setup(420, 420)
+turtle.hideturtle()
+turtle.tracer(False)
+turtle.up()
 draw()
-done()
+turtle.done()
